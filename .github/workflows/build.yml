@@ -18,12 +18,12 @@ jobs:
           java-version: 21
       - name: Clean Build
         run: ./gradlew clean build
-      - name: List All JAR Files
-        run: find . -type f -name "*.jar"
-      #- name: Upload artifacts
-      #  uses: actions/upload-artifact@v3
-      #  with:
-      #    name: Plugin JAR
-      #    #path: target/**.jar
-      #    path: build/libs/*.jar
-      #    if-no-files-found: error
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: Plugin JAR
+          #path: target/**.jar
+          path: Bukkit/build/libs/*.jar
+          if-no-files-found: error
+      #- name: List All JAR Files
+      #  run: find . -type f -name "*.jar"
